@@ -1,0 +1,189 @@
+carShowroom {
+	display: block; 
+	background: lightblue;
+	padding-top: 25px; 
+	text-align: center; 
+	counter-reset: counter; 
+}
+
+brands::before { 
+    display: block;
+    content:"Available brands:";
+    font-size: 40pt;
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(199, 235, 247);
+}
+
+brands brand {
+    display: block;
+    margin: 30px;
+    margin-left: 0px;
+    width: 20%;
+    border-style: solid;
+    border-width: 3px;
+    border-color: blueviolet;
+    font-size: 10pt;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 255, 98, 0.548);
+    position: relative;
+    left: 40%;
+}
+
+brand:hover { 
+    width: 40%;
+    left: 30%;
+}
+
+brand *{
+    display: block;
+}
+
+brand name{
+	font-size: 20pt;  
+}
+
+brand country[continent='Europe']{
+    font-weight:bold;
+}
+
+brand chairman::before {
+    display: inline;
+	font-weight: bold;
+    content: 'Chairman: '; 
+}
+
+
+cars car {
+    display: inline-block;
+	font-size: 10pt;
+    padding: 10px;
+    border-style: groove;
+    border-width: 2px;
+    border-color: blueviolet;
+    text-align: left;
+    background-color: rgb(225, 244, 250);
+    position: relative;
+    margin: 15px;
+
+}
+
+car::before{
+    display:block;
+    font-size: 18px; 
+    text-align: center;
+	content: counter(counter) '. '; 
+	counter-increment: counter;
+}
+
+car:hover { 
+    background-color: yellow;
+}
+
+car *{
+    display:block;  
+}
+
+
+car *::before {
+    display:inline;
+    font-size: 14px; 
+    font-weight:bold;
+}
+
+car model::before{
+    content: 'model: '; 
+}
+
+car model::after{
+    content: " "attr(version)""; 
+}
+
+car type::before{
+    content: 'type: '; 
+}
+
+type:after {
+    content: "(" attr(doors)"  doors, "attr(seats)" seats)";
+  }
+
+car production::before{
+    content: 'production: '; 
+}
+
+car engine::before{
+    content: 'engine: '; 
+}
+car wheeldrive::before{
+    content: 'wheeldrive: '; 
+}
+
+car condition::before{
+    content: 'condition: ';
+}
+
+car lacquer::before{
+    content: 'lacquer: '
+}
+
+car price::before{
+    content: 'price: ';
+}
+
+car price::after{
+    content: " " attr(currency)
+}
+
+car engine {
+    display: block;
+	font-size: 10pt;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(194, 221, 40);
+    position: relative;
+    margin: 5px;
+}
+
+car engine[fuel="Petrol"]{
+    background-color: rgb(40, 179, 221);
+}
+
+car engine[fuel="Diesel"]{
+    background-color: rgb(194, 221, 40);
+}
+
+engine cylindersNumber::after{
+    content: ' cylinders '
+}
+
+engine capacity::after{
+    content: ' cm3 '
+}
+
+engine power::after{
+    content: ' KM '
+}
+
+car condition[accidentfree='n']{
+    text-decoration: underline;
+    text-decoration-color: red;
+}
+
+metadata{
+    display: block;
+    font-size: 10pt;
+    text-align: center;
+    padding: 20px;
+    background-color:rgb(199, 235, 247);
+}
+
+metadata > author{
+    display: list-item;
+    list-style-type: circle;
+	margin-left:10px;
+}
+
+metadata > modificationDate{
+    font-weight:bold;
+}
