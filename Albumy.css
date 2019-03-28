@@ -1,21 +1,21 @@
-carShowroom {
+albumShowroom {
 	display: block; 
-	background: lightblue;
+	background: lightgreen;
 	padding-top: 25px; 
 	text-align: center; 
 	counter-reset: counter; 
 }
 
-brands::before { 
+types::before { 
     display: block;
-    content:"Available brands:";
+    content:"Available types of music:";
     font-size: 40pt;
     text-align: center;
     padding: 20px;
-    background-color: rgb(199, 235, 247);
+    background-color: rgb(255,0,100);
 }
 
-brands brand {
+types type {
     display: block;
     margin: 30px;
     margin-left: 0px;
@@ -26,36 +26,36 @@ brands brand {
     font-size: 10pt;
     text-align: center;
     padding: 10px;
-    background-color: rgba(0, 255, 98, 0.548);
+    background-color: yellow;
     position: relative;
     left: 40%;
 }
 
-brand:hover { 
-    width: 40%;
-    left: 30%;
+type:hover { 
+    width: 30%;
+    left: 35%;
 }
 
-brand *{
+type *{
     display: block;
 }
 
-brand name{
+type name{
 	font-size: 20pt;  
 }
 
-brand country[continent='Europe']{
+type countryOfOrigin{
     font-weight:bold;
 }
 
-brand chairman::before {
+type time::before {
     display: inline;
 	font-weight: bold;
-    content: 'Chairman: '; 
+    content: 'Date of creation: '; 
 }
 
 
-cars car {
+albums album {
     display: inline-block;
 	font-size: 10pt;
     padding: 10px;
@@ -69,7 +69,21 @@ cars car {
 
 }
 
-car::before{
+albums album {
+    display: inline-block;
+	font-size: 10pt;
+    padding: 10px;
+    border-style: groove;
+    border-width: 2px;
+    border-color: blueviolet;
+    text-align: left;
+    background-color: rgb(225, 244, 250);
+    position: relative;
+    margin: 15px;
+
+}
+
+album::before{
     display:block;
     font-size: 18px; 
     text-align: center;
@@ -77,65 +91,51 @@ car::before{
 	counter-increment: counter;
 }
 
-car:hover { 
-    background-color: yellow;
+album:hover { 
+    background-color: red;
 }
 
-car *{
+album *{
     display:block;  
 }
 
 
-car *::before {
+album *::before {
     display:inline;
     font-size: 14px; 
     font-weight:bold;
 }
 
-car model::before{
-    content: 'model: '; 
+album author::before{
+    content: 'Author: '; 
 }
 
-car model::after{
-    content: " "attr(version)""; 
+
+album title::before{
+    content: 'title: '; 
 }
 
-car type::before{
-    content: 'type: '; 
+album topSong::before{
+    content: 'Top Song: '; 
 }
 
-type:after {
-    content: "(" attr(doors)"  doors, "attr(seats)" seats)";
-  }
-
-car production::before{
-    content: 'production: '; 
+album releaseDate::before{
+    content: 'Release Date: '; 
 }
 
-car engine::before{
-    content: 'engine: '; 
-}
-car wheeldrive::before{
-    content: 'wheeldrive: '; 
+album numberOfSingles::before{
+    content: 'Number Of Singles: '; 
 }
 
-car condition::before{
-    content: 'condition: ';
+album price::before{
+    content: 'Price: ';
 }
 
-car lacquer::before{
-    content: 'lacquer: '
-}
-
-car price::before{
-    content: 'price: ';
-}
-
-car price::after{
+album price::after{
     content: " " attr(currency)
 }
 
-car engine {
+album topSong {
     display: block;
 	font-size: 10pt;
     padding: 10px;
@@ -145,30 +145,26 @@ car engine {
     margin: 5px;
 }
 
-car engine[fuel="Petrol"]{
-    background-color: rgb(40, 179, 221);
+album title::Before{
+    content: 'Title:'
 }
 
-car engine[fuel="Diesel"]{
-    background-color: rgb(194, 221, 40);
+album lenght::Before{
+    content: 'Time:'
 }
 
-engine cylindersNumber::after{
-    content: ' cylinders '
+album lenght::after{
+    content: ' s '
 }
 
-engine capacity::after{
-    content: ' cm3 '
+album producer::Before{
+    content: ' Producer: '
 }
 
-engine power::after{
-    content: ' KM '
+album trackNumber::Before{
+    content: ' Track number: '
 }
 
-car condition[accidentfree='n']{
-    text-decoration: underline;
-    text-decoration-color: red;
-}
 
 metadata{
     display: block;

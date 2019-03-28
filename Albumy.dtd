@@ -1,0 +1,34 @@
+<!ELEMENT carShowroom (types,albums,metadata)>
+
+<!ELEMENT types (brand+)>
+<!ELEMENT type (name, countryOfOrigin, time)>
+<!ATTLIST brand id ID #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+<!ATTLIST country continent (Europe|Asia|North_America|South_America|Africa|Austalia_and_Oceania|Europe/North_America) "Europe">
+<!ELEMENT time (#PCDATA)>
+
+<!ELEMENT albums (album+)>
+<!ELEMENT album (author, title, topSong, releaseDate, numberOfSingles, price)>
+<!ATTLIST album 
+    id ID #REQUIRED
+    brandId IDREF #REQUIRED>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT topSong (title, lenght,producer,trackNumber)>
+<!ELEMENT lenght (#PCDATA)>
+<!ATTLIST time unit NMTOKEN #FIXED "s">
+<!ELEMENT producer (#PCDATA)>
+<!ELEMENT trackNumber (#PCDATA)>
+<!ELEMENT releaseDate (#PCDATA)>
+<!ELEMENT numberOfSingles (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ATTLIST price 
+    currency CDATA #REQUIRED>
+
+<!ELEMENT metadata (comment,author,modificationDate)>
+<!ELEMENT comment (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ATTLIST author 
+    index NMTOKEN #IMPLIED>
+<!ELEMENT modificationDate (#PCDATA)>
